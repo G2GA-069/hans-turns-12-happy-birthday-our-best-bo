@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- htmlaunch:enhanced:v2 -->
+<meta name="theme-color" content="#7b1422">
+<link rel="canonical" href="https://G2GA-069.github.io/hans-turns-12-happy-birthday-our-best-bo/">
+<meta property="og:image" content="https://avatars.githubusercontent.com/G2GA-069?s=460">
+<meta property="og:image:alt" content="Hans Turns 12! 🎂 Happy Birthday Our Best Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hans Turns 12! 🎂 Happy Birthday Our Best Boy">
+<meta name="twitter:description" content="Join us celebrating Hans, the goodest boy, as he turns 12! A birthday party website dedicated to our beloved furry family member.">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/G2GA-069?s=460">
+<meta name="twitter:image:alt" content="Hans Turns 12! 🎂 Happy Birthday Our Best Boy">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hans Turns 12! 🎂 Happy Birthday Our Best Boy</title>
+    <meta name="description" content="Join us celebrating Hans, the goodest boy, as he turns 12! A birthday party website dedicated to our beloved furry family member.">
+    <meta property="og:title" content="Hans Turns 12! Happy Birthday Our Best Boy">
+    <meta property="og:description" content="Celebrating Hans's 12th birthday with treats, toys, and lots of belly rubs!">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🐕</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #fef7e0 0%, #f0e6ff 100%);
+            min-height: 100vh;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff6b9d;
+            animation: fall 3s linear infinite;
+        }
+
+        .confetti-piece:nth-child(odd) { background: #4ecdc4; }
+        .confetti-piece:nth-child(3n) { background: #ffe66d; }
+        .confetti-piece:nth-child(4n) { background: #ff8a5b; }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        header {
+            text-align: center;
+            padding: clamp(2rem, 8vw, 4rem) 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .birthday-banner {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffe66d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: #ff6b9d;
+            color: white;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin: 1rem 0;
+            transform: rotate(-3deg);
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .dog-portrait {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 8px solid #ffe66d;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .dog-portrait::before {
+            content: '🐕';
+            filter: sepia(0.3) hue-rotate(20deg);
+        }
+
+        .party-hat {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-15deg);
+            font-size: 3rem;
+        }
+
+        .birthday-message {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: #333;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .birthday-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .fact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #4ecdc4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .fact-card:nth-child(even) {
+            border-top-color: #ff8a5b;
+        }
+
+        .fact-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .fact-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-text {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .celebration-section {
+            background: linear-gradient(135deg, #ff6b9d, #ff8a5b);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .celebration-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .party-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .party-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .party-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .wishes-section {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .wishes-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .wish-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4ecdc4;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(68, 160, 141, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #666;
+            position: relative;
+            z-index: 2;
+        }
+
+        .paw-prints {
+            font-size: 2rem;
+            opacity: 0.3;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .dog-portrait {
+                width: 150px;
+                height: 150px;
+                font-size: 4rem;
+            }
+
+            .party-hat {
+                font-size: 2rem;
+                top: -15px;
+            }
+
+            .birthday-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .celebration-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti">
+        <div class="confetti-piece" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="confetti-piece" style="left: 20%; animation-delay: 0.5s;"></div>
+        <div class="confetti-piece" style="left: 30%; animation-delay: 1s;"></div>
+        <div class="confetti-piece" style="left: 40%; animation-delay: 1.5s;"></div>
+        <div class="confetti-piece" style="left: 50%; animation-delay: 2s;"></div>
+        <div class="confetti-piece" style="left: 60%; animation-delay: 0.3s;"></div>
+        <div class="confetti-piece" style="left: 70%; animation-delay: 0.8s;"></div>
+        <div class="confetti-piece" style="left: 80%; animation-delay: 1.3s;"></div>
+        <div class="confetti-piece" style="left: 90%; animation-delay: 1.8s;"></div>
+    </div>
+
+    <header>
+        <h1 class="birthday-banner">Happy Birthday Hans!</h1>
+        <div class="age-badge">12 Years Old</div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="dog-portrait">
+                <span class="party-hat">🎉</span>
+            </div>
+            <p class="birthday-message">
+                Today we celebrate the most wonderful, loyal, and loving member of our family! 
+                Hans has been bringing us joy, laughter, and unconditional love for 12 amazing years. 
+                From puppy zoomies to senior snuggles, every day with Hans is a gift. 
+                Happy birthday to our very best boy! 🎂❤️
+            </p>
+        </section>
+
+        <section class="birthday-facts">
+            <div class="fact-card">
+                <span class="fact-icon">🦴</span>
+                <h3 class="fact-title">Favorite Treats</h3>
+                <p class="fact-text">Peanut butter cookies, frozen carrots, and those special birthday pupcakes from the pet store</p>
+            </div>
+            
+            <div class="fact-card">
+                <span class="fact-icon">🎾</span>
+                <h3 class="fact-title">Favorite Activities</h3>
+                <p class="fact-text">Playing fetch in the backyard, long walks around the neighborhood, and napping in sunny spots</p>
+            </div>
+            
+            <div class="fact-card">
+                <span class="fact-icon">🏆</span>
+                <h3 class="fact-title">Best Tricks</h3>
+                <p class="fact-text">Sit, stay, shake, roll over, and his signature "play dead" that always gets applause</p>
+            </div>
+            
+            <div class="fact-card">
+                <span class="fact-icon">💤</span>
+                <h3 class="fact-title">Sleeping Style</h3>
+                <p class="fact-text">Sprawled upside down on his favorite blanket, usually with his tongue hanging out</p>
+            </div>
+        </section>
+
+        <section class="celebration-section">
+            <h2 class="celebration-title">Birthday Party Details</h2>
+            <p>Join us for Hans's pawsome birthday celebration!</p>
+            
+            <div class="party-details">
+                <div class="party-item">
+                    <h3>📅 When</h3>
+                    <p>Today, all day long!</p>
+                </div>
+                
+                <div class="party-item">
+                    <h3>🎂 Menu</h3>
+                    <p>Dog-safe cake, treats, and extra belly rubs</p>
+                </div>
+                
+                <div class="party-item">
+                    <h3>🎁 Gifts</h3>
+                    <p>New squeaky toys and a cozy new bed</p>
+                </div>
+                
+                <div class="party-item">
+                    <h3>📸 Activities</h3>
+                    <p>Photo session, playtime, and lots of snuggles</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wishes-section">
+            <h2 class="wishes-title">Send Hans Birthday Wishes!</h2>
+            <form class="wish-form" action="mailto:hans@family.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Birthday Message for Hans</label>
+                    <textarea id="message" name="message" placeholder="Tell Hans how much he means to you..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Birthday Wishes 🎂</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="paw-prints">🐾 🐾 🐾 🐾 🐾</div>
+        <p>Made with ❤️ for the goodest boy in the world</p>
+        <p>Hans: Spreading joy since 2012</p>
+    </footer>
+</body>
+</html>
